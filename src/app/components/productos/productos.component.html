@@ -1,0 +1,58 @@
+<div class="table-container">
+  <div class="table-title">
+    <h3>Tabla de {{ tableName | titlecase }}</h3>
+  </div>
+
+  <div
+    [ngClass]="{
+      'focused-seach-bar': focusedInput,
+      'unfocused-search-bar': !focusedInput
+    }"
+    class="search-bar"
+  >
+    <input
+      (focusin)="focusSearch()"
+      (focusout)="unfocusSearch()"
+      type="text"
+      placeholder="Buscar..."
+      [(ngModel)]="searchOrdersQuery"
+      id="search-bar-orders"
+      (keyup)="searchProducts()"
+    />
+  </div>
+
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Categoría</th>
+      <th>Cantidad</th>
+    </tr>
+    <tr *ngFor="let producto of productos">
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.precio }}</td>
+      <td>{{ producto.categoria }}</td>
+      <td>{{ producto.cantidad }}</td>
+    </tr>
+  </table>
+
+  <div class="pagination-container">
+    <div
+      [ngClass]="{ 'disabled-pagination-button': page + 1 == 1 }"
+      (click)="previousPage()"
+      class="pagination-button"
+    >
+      <p>Anterior</p>
+    </div>
+
+    <p class="page-number-text">Página {{ page + 1 }} de {{ totalPages }}</p>
+
+    <div
+      [ngClass]="{ 'disabled-pagination-button': page + 1 == totalPages }"
+      (click)="nextPage()"
+      class="pagination-button"
+    >
+      <p>Siguiente</p>
+    </div>
+  </div>
+</div>
