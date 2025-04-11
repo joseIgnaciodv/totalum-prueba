@@ -32,8 +32,8 @@
     </tr>
     <tr *ngFor="let pedido of pedidos">
       <td>{{ pedido.numero_pedido }}</td>
-      <td>{{ pedido.importe }}</td>
-      <td>{{ pedido.importe_impuestos }}</td>
+      <td>{{ pedido.importe }} &euro;</td>
+      <td>{{ pedido.importe_impuestos }} &euro;</td>
       <td>{{ pedido.cantidad_productos }}</td>
       <td>{{ formatDate(pedido.fecha) }}</td>
       <td>{{ pedido.nombre_cliente }}</td>
