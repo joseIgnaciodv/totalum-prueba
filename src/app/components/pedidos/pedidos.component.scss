@@ -1,0 +1,121 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin: 25px auto 0 auto;
+  box-shadow: 2px 1px 4px #6f7278;
+  border-radius: 12px;
+
+  & table {
+    width: 95%;
+    text-align: left;
+    margin: 15px auto;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 16px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    color: #4d515b;
+
+    & th {
+      font-weight: 600;
+      background-color: #e3e4e7;
+      padding-left: 10px;
+    }
+
+    & tr {
+      height: 40px;
+    }
+
+    & td {
+      font-size: 14px;
+      padding-left: 10px;
+      border-top: 1px solid black;
+    }
+  }
+}
+
+.table-title {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  margin: 20px auto 0 auto;
+
+  & h3 {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 40px;
+  border: 1.5px solid lightgray;
+  margin: 15px auto 0 auto;
+  border-radius: 12px;
+
+  & input {
+    outline: none;
+    border: none;
+    width: 90%;
+    font-size: 16px;
+    margin-left: 10px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+  }
+}
+
+.focused-seach-bar {
+  border: 1.5px solid #3878f3;
+}
+
+.unfocused-seach-bar {
+  border: 1.5px solid lightgray;
+}
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto 20px auto;
+  justify-content: space-between;
+}
+
+.pagination-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 35px;
+  background-color: #3878f3;
+  border-radius: 12px;
+
+  & p {
+    color: white;
+    font-weight: 500;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    margin: 0;
+  }
+}
+
+.pagination-button:hover {
+  cursor: pointer;
+  background-color: #2b5bb8;
+}
+
+.disabled-pagination-button {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.page-number-text {
+  font-size: 16px;
+  color: #4d515b;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0;
+}

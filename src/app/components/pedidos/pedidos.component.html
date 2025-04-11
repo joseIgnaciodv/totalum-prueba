@@ -1,0 +1,62 @@
+<div class="table-container">
+  <div class="table-title">
+    <h3>Tabla de {{ tableName | titlecase }}</h3>
+  </div>
+
+  <div
+    [ngClass]="{
+      'focused-seach-bar': focusedInput,
+      'unfocused-search-bar': !focusedInput
+    }"
+    class="search-bar"
+  >
+    <input
+      (focusin)="focusSearch()"
+      (focusout)="unfocusSearch()"
+      type="text"
+      placeholder="Buscar..."
+      [(ngModel)]="searchOrdersQuery"
+      id="search-bar-orders"
+      (keyup)="searchOrders()"
+    />
+  </div>
+
+  <table>
+    <tr>
+      <th>Número pedido</th>
+      <th>Importe</th>
+      <th>Impuestos</th>
+      <th>Cantidad</th>
+      <th>Fecha</th>
+      <th>Nombre</th>
+    </tr>
+    <tr *ngFor="let pedido of pedidos">
+      <td>{{ pedido.numero_pedido }}</td>
+      <td>{{ pedido.importe }}</td>
+      <td>{{ pedido.importe_impuestos }}</td>
+      <td>{{ pedido.cantidad_productos }}</td>
+      <td>{{ formatDate(pedido.fecha) }}</td>
+      <td>{{ pedido.nombre_cliente }}</td>
+    </tr>
+  </table>
+
+  <div class="pagination-container">
+    <div
+      [ngClass]="{ 'disabled-pagination-button': page + 1 == 1 }"
+      (click)="previousPage()"
+      class="pagination-button"
+    >
+      <p>Anterior</p>
+    </div>
+
+    <p class="page-number-text">Página {{ page + 1 }} de {{ totalPages }}</p>
+
+    <div
+      [ngClass]="{ 'disabled-pagination-button': page + 1 == totalPages }"
+      (click)="nextPage()"
+      class="pagination-button"
+    >
+      <p>Siguiente</p>
+    </div>
+  </div>
+</div>
