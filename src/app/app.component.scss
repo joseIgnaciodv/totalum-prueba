@@ -1,0 +1,82 @@
+.app {
+  display: flex;
+  width: 100%;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  width: 17%;
+  max-width: 17%;
+  height: 100vh;
+  border-radius: 0 15px 15px 0;
+  box-shadow: 3px 0 8px #6f7278;
+}
+
+.nav-header {
+  display: flex;
+  width: 100%;
+  height: 65px;
+  background-color: #084887;
+  border-radius: 0 15px 0 0;
+  margin-bottom: 10px;
+
+  & img {
+    width: 130px;
+    margin: auto auto auto 25px;
+  }
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+
+  & svg {
+    width: 25px;
+    height: 25px;
+    fill: #6f7278;
+    margin-left: 10px;
+    margin-right: 5px;
+  }
+
+  & p {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+.nav-item:hover {
+  background-color: #e3e4e7;
+  cursor: pointer;
+
+  & p {
+    opacity: 0.4;
+  }
+}
+
+.active-marker {
+  width: 5px;
+  height: 100%;
+  background-color: #3878f3;
+  visibility: hidden;
+  margin-left: 2px;
+}
+
+.active {
+  pointer-events: none;
+  & p {
+    color: #3878f3;
+  }
+
+  & svg {
+    fill: #3878f3;
+  }
+
+  .active-marker {
+    visibility: visible;
+  }
+}
